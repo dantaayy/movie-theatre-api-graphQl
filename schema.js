@@ -8,7 +8,11 @@ type Query {
         rating: Int,
         status: String,
     ): [Show],
-    showsByRating(rating:Int): [Show]
+    showsByRating(rating:Int): [Show],
+    users(
+        username: String,
+        password: String
+    ): [User]
 }
 
 type Show {
@@ -16,5 +20,10 @@ type Show {
     genre: String,
     rating: Int,
     status: String,
+}
+
+type User {
+    username: String,
+    password: String
 }
 `

@@ -1,15 +1,15 @@
 const {ApolloServer, gql} = require('apollo-server');
 const colors = require('colors')
-const users = require('./data/users.json')
 const ShowAPI = require('./datasources/shows')
-
+const UserAPI = require('./datasources/users')
 
 // SCHEMA
 const typeDefs = require('./schema')
 
 // DATASOURCE
 const dataSources = () => ({
-    showAPI: new ShowAPI()
+    showAPI: new ShowAPI(),
+    userAPI: new UserAPI()
 })
 
 // RESOLVER FUNCTION
