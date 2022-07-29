@@ -1,10 +1,7 @@
+const Query = require('./resolvers/query')
+const Mutation = require('./resolvers/mutation')
+
 module.exports = {
-    Query: {
-        shows: (parent, args, {dataSources}, info) => {
-            return dataSources.showAPI.getShows(args);
-        },
-        showsByRating: (parent, {rating}, {dataSources}, info) => {
-            return dataSources.showAPI.getShowsByRating(rating);
-        }
-    }
+    Query,
+    Mutation
 }
