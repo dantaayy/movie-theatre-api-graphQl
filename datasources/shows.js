@@ -28,6 +28,11 @@ class ShowAPI extends DataSource {
         watchedShows[0].watched = !watchedShows[0].watched
         return watchedShows[0]
     }
+
+    addShow(show) {
+        shows.push(show)
+        return show;
+    }
 }
 
 module.exports = ShowAPI;
