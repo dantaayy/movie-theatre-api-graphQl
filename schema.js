@@ -20,10 +20,25 @@ type Show {
     genre: String,
     rating: Int,
     status: String,
+    watched: Boolean
 }
 
 type User {
     username: String,
     password: String
+    watched: [String]
 }
+
+input ShowInput {
+    title: String,
+    genre: String,
+    watched: Boolean
+}
+
+type Mutation {
+    toggleWatchedShow(title: String): Show
+    addNewShow(show: ShowInput): Show
+}
+
+
 `

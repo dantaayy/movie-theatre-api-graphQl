@@ -22,6 +22,12 @@ class ShowAPI extends DataSource {
         const matchedShows = _.filter(shows, ['rating', rating])
         return matchedShows
     }
+
+    toggleWatchedShow(title) {
+        const watchedShows = _.filter(shows, ['title', title])
+        watchedShows[0].watched = !watchedShows[0].watched
+        return watchedShows[0]
+    }
 }
 
 module.exports = ShowAPI;
