@@ -32,12 +32,12 @@ type User {
 input ShowInput {
     title: String,
     genre: String,
-    watched: Boolean
 }
 
 type Mutation {
     toggleWatchedShow(title: String): Show
-    addNewShow(show: ShowInput): Show
+    addNewShow(show: ShowInput): Show,
+    deleteShow(show: ShowInput): Show
 }
 
 
