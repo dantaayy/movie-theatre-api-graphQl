@@ -66,12 +66,14 @@ $ npm run start-dev
 - Get ALL Users
 - Filter Users by any column
 - Create a new Show
-- Delete a Show
+- Delete a Show by title
+
 
 To-do:
 
 - Add watched Shows to Users Watch List
 - Create a new User
+- Delete a user by username
 
 ---
 
