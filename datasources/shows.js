@@ -37,13 +37,10 @@ class ShowAPI extends DataSource {
     deleteShow(show) {
         // JS FINDINDEX() FUNCTION
         const index = shows.findIndex(item => item.title === show.title)
-        console.log(index)
+        // console.log(index)
         const deletedItem = shows.splice(index, 1)
-        console.log(deletedItem)
+        // console.log(deletedItem)
         return deletedItem
-        
-        /** USING LODASH */
-  
     }
 }
 
