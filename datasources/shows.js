@@ -36,7 +36,7 @@ class ShowAPI extends DataSource {
 
     deleteShow(show) {
         // JS FILTER() FUNCTION
-        const filteredShows = shows.filter(function(show) {return show.title !== show.title});
+        const filteredShows = shows.filter(data => data.title != show.title);
         console.log(filteredShows)
         return filteredShows;
 
