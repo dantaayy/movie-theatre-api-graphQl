@@ -35,11 +35,13 @@ class ShowAPI extends DataSource {
     }
 
     deleteShow(show) {
-        // JS FILTER() FUNCTION
-        const filteredShows = shows.filter(data => data.title != show.title);
-        console.log(filteredShows)
-        return filteredShows;
-
+        // JS FINDINDEX() FUNCTION
+        const index = shows.findIndex(item => item.title === show.title)
+        console.log(index)
+        const deletedItem = shows.splice(index, 1)
+        console.log(deletedItem)
+        return deletedItem
+        
         /** USING LODASH */
   
     }
