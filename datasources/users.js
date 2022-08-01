@@ -19,7 +19,18 @@ class UserAPI extends DataSource {
         return _.filter(users, args)
     }
 
+    addUser(user) {
+        users.push(user)
+        return user
+    }
 
+    deleteUser(user) {
+        // JS FUNCTION FINDINDEX()
+        const index = users.findIndex(item => item.username === user.username)
+        console.log(index)
+        const deletedUser = users.splice(index, 1)
+        return deletedUser
+    }
 
 }
 
