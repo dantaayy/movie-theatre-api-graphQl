@@ -21,6 +21,7 @@ type Show {
     genre: String,
     rating: Int,
     status: String,
+    userId: [Int]
 }
 
 input ShowInput {
