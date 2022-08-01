@@ -36,12 +36,12 @@ class ShowAPI extends DataSource {
 
     deleteShow(show) {
         // JS FILTER() FUNCTION
-        // const filteredShows = shows.filter(show => show.title !== title);
-        // return filteredShows;
+        const filteredShows = shows.filter(function(show) {return show.title !== show.title});
+        console.log(filteredShows)
+        return filteredShows;
 
         /** USING LODASH */
-        const filteredSHows = _.filter(shows, !show)
-        return filteredSHows
+  
     }
 }
 
