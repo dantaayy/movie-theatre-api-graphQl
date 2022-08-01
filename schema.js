@@ -16,6 +16,7 @@ type Query {
 }
 
 type Show {
+    id: ID!,
     title: String,
     genre: String,
     rating: Int,
