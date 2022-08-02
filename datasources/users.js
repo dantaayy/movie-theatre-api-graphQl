@@ -32,6 +32,13 @@ class UserAPI extends DataSource {
         return deletedUser
     }
 
+    addWatchedShow(user, show) {
+        // PUSH A SHOW TO USERS WATCHED ARRAY
+        const arr = user.watched
+        arr.push(show)
+        console.log(user);
+    }
+
 }
 
 module.exports = UserAPI;
