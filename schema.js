@@ -57,7 +57,7 @@ input DeleteUserInput {
 }
 
 type Mutation {
-    toggleWatchedShow(title: String): Show
+    toggleWatchedShow(title: String): Show,
     addNewShow(show: ShowInput): Show,
     deleteShow(show: DeleteShowInput): Show,
     addUser(user: UserInput): User!,
