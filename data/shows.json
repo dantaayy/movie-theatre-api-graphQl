@@ -4,76 +4,87 @@
       "title": "King of Queens",
       "genre": "Drama",
       "rating": 5,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [1, 2]
     },
     {
       "id": "2",
       "title": "X-Files",
       "genre": "Sitcom",
       "rating": 0,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [1]
     },
     {
       "id": "3",
       "title": "The Office",
       "genre": "Comedy",
       "rating": 1,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [1]
     },
     {
       "id": "4",
       "title": "American Horror Story",
       "genre": "Sitcom",
       "rating": 5,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [2]
     },
     {
       "id": "5",
       "title": "House",
       "genre": "Comedy",
       "rating": 0,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": []
     },
     {
       "id": "6",
       "title": "The Punisher",
       "genre": "Drama",
       "rating": 5,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [1, 2]
     },
     {
       "id": "7",
       "title": "Squid Games",
       "genre": "Comedy",
       "rating": 0,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [2]
     },
     {
       "id": "8",
       "title": "Avatar",
       "genre": "Comedy",
       "rating": 1,
-      "status": "on-going"
+      "status": "on-going",
+      "userId": [2]
     },
     {
       "id": "9",
       "title": "Demon Slayer",
       "genre": "Sitcom",
       "rating": 5,
-      "status": "cancelled"
+      "status": "cancelled",
+      "userId": [1, 2]
     },
     {
       "id": "10",
       "title": "Jujutsu Kaisen",
       "genre": "Horror",
       "rating": 0,
-      "status": "cancelled"
+      "status": "cancelled",
+      "userId": [1]
     },
     {
       "id": "11",
       "title": "Queens Gambit",
       "genre": "Drama",
       "rating": 0,
-      "status": "cancelled"
+      "status": "cancelled",
+      "userId": [2]
     }
 ]

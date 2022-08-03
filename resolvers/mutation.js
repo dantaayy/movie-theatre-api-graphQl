@@ -14,7 +14,7 @@ module.exports = {
     deleteUser: (parent, {user}, {dataSources}, info) => {
         return dataSources.userAPI.deleteUser(user)
     },
-    addWatchedShow: (parent, {user, show}, {dataSources}, info) => {
-        return dataSources.userAPI.addWatchedShow(user, show)
+    findShow: (parent, {show}, {dataSources}, info) => {
+        return dataSources.userAPI.findShow(show)
     }
 }

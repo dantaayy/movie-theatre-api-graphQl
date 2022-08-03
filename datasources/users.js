@@ -1,5 +1,6 @@
 // IMPORT users data
 const users = require('../data/users.json')
+const shows = require('../data/shows.json')
 const {DataSource} = require('apollo-datasource');
 const _ = require('lodash')
 
@@ -32,11 +33,11 @@ class UserAPI extends DataSource {
         return deletedUser
     }
 
-    addWatchedShow(user, show) {
+    findShow(show) {
         // PUSH A SHOW TO USERS WATCHED ARRAY
-        const arr = user.watched
-        arr.push(show)
-        console.log(user);
+        const foundShow = shows.find(item => item.id === show.id)
+        console.log(foundShow)
+        return foundShow
     }
 
 }
