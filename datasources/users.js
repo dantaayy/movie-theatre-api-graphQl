@@ -37,6 +37,9 @@ class UserAPI extends DataSource {
         // PUSH A SHOW TO USERS WATCHED ARRAY
         const foundShow = shows.find(item => item.id === show.id)
         console.log(foundShow)
+        console.log(users)
+        users.forEach(user => user.shows.push(foundShow))
+        console.log(users)
         return foundShow
     }
 

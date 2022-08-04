@@ -1,7 +1,4 @@
 module.exports = {
-    toggleWatchedShow: (parent, {title}, {dataSources}, info) => {
-        return dataSources.showAPI.toggleWatchedShow(title);
-    },
     addNewShow: (parent, {show}, {dataSources}, info) => {
         return dataSources.showAPI.addShow(show);
     },
@@ -16,5 +13,8 @@ module.exports = {
     },
     findShow: (parent, {show}, {dataSources}, info) => {
         return dataSources.userAPI.findShow(show)
+    },
+    updateShow: (parent, {id, title, genre, status}, {dataSources}, info) => {
+        return dataSources.showAPI.updateShow({id, title, genre, status})
     }
 }

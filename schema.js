@@ -29,6 +29,7 @@ input ShowInput {
     id: ID!,
     title: String,
     genre: String,
+    rating: Int
 }
 
 input WatchedShowInput {
@@ -57,12 +58,12 @@ input DeleteUserInput {
 }
 
 type Mutation {
-    toggleWatchedShow(title: String): Show,
     addNewShow(show: ShowInput): Show,
     deleteShow(show: DeleteShowInput): Show,
     addUser(user: UserInput): User!,
     deleteUser(user: DeleteUserInput): User,
     findShow(show: WatchedShowInput): Show,
+    updateShow(id: ID!, title: String, genre: String, status: String): Show
 }
 
 `
