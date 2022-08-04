@@ -16,5 +16,8 @@ module.exports = {
     },
     updateShow: (parent, {id, title, genre, status}, {dataSources}, info) => {
         return dataSources.showAPI.updateShow({id, title, genre, status})
+    },
+    updateUser: (parent, {id, username, password}, {dataSources}, info) => {
+        return dataSources.userAPI.updateUser({id, username, password})
     }
 }

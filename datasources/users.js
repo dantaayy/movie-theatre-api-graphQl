@@ -43,6 +43,14 @@ class UserAPI extends DataSource {
         return foundShow
     }
 
+    updateUser({id, username, password}) {
+        const user = users.find(item => item.id = id)
+        user.username = username
+        user.password = password
+        console.log(user)
+        return user
+    }
+
 }
 
 module.exports = UserAPI;

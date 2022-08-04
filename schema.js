@@ -63,7 +63,8 @@ type Mutation {
     addUser(user: UserInput): User!,
     deleteUser(user: DeleteUserInput): User,
     findShow(show: WatchedShowInput): Show,
-    updateShow(id: ID!, title: String, genre: String, status: String): Show
+    updateShow(id: ID!, title: String, genre: String, status: String): Show,
+    updateUser(id:ID!, username: String, password: String): User
 }
 
 `
