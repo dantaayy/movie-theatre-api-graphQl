@@ -5,6 +5,12 @@ const {DataSource} = require('apollo-datasource');
 const _ = require('lodash')
 const bcrypt = require('bcryptjs')
 
+// HASH PASSWORD BEFORE QUERING THEM
+users.forEach(async (user) => {
+            const hashPassword = await bcrypt.hash(user.password, 10)
+            user.password = hashPassword
+    })
+
 class UserAPI extends DataSource {
     // CONSTRucTOR INHERITS PARENT
     constructor () {
@@ -15,13 +21,13 @@ class UserAPI extends DataSource {
     initialize (config) {
 
     }
-
+    
     // METHODS FOR USERS
     getUsers(args) {
-        users.forEach(async (user) => {
-            const hashPassword = await bcrypt.hash(user.password, 10)
-            user.password = hashPassword
-        })
+        // users.forEach(async (user) => {
+        //     const hashPassword = await bcrypt.hash(user.password, 10)
+        //     user.password = hashPassword
+        // })
         return _.filter(users, args)
     }
 
