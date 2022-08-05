@@ -24,10 +24,6 @@ class UserAPI extends DataSource {
     
     // METHODS FOR USERS
     getUsers(args) {
-        // users.forEach(async (user) => {
-        //     const hashPassword = await bcrypt.hash(user.password, 10)
-        //     user.password = hashPassword
-        // })
         return _.filter(users, args)
     }
 
