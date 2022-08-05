@@ -69,10 +69,13 @@ $ npm run start-dev
 - Delete a Show by title
 - Create a new User
 - Delete a user by username
+- Add watched Shows to Users Watch List (currently adds specifc show to all users watch list)
 
 To-do:
 
-- Add watched Shows to Users Watch List
+- Create a login query for admin/customer priveleges
+- Depending who is logged in will display only their information
+- Edit add shows tot specific user
 
 ---
 
