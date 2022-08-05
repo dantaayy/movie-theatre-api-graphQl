@@ -50,10 +50,11 @@ class UserAPI extends DataSource {
         return foundShow
     }
 
-    updateUser({id, username, password}) {
+    async updateUser({id, username, password}) {
         const user = users.find(item => item.id = id)
+        const hashPassword = await bcrypt.hash(user.password, 10)
         user.username = username
-        user.password = password
+        user.password = hashPassword
         console.log(user)
         return user
     }
