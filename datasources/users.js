@@ -71,7 +71,7 @@ class UserAPI extends DataSource {
 
         // COMPARE PLAINTXT PW W/ HASH PW
         const valid = await bcrypt.compare(password, user.password)
-        // console.log(valid)
+        console.log(valid)
         if(!valid) {
             throw new Error('Incorrect password')
         }

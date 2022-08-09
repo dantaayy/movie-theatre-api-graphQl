@@ -1,7 +1,11 @@
 const {ApolloServer, gql, ApolloError} = require('apollo-server');
+const {ApolloServerPluginLandingPageLocalDefault, AuthenticationError} = require('apollo-server-core')
 const colors = require('colors')
 const ShowAPI = require('./datasources/shows')
 const UserAPI = require('./datasources/users')
+const express = require('express')
+const jwks = require('jwks-rsa')
+const cors = require('cors')
 
 // SCHEMA
 const typeDefs = require('./schema')
@@ -23,7 +27,22 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources,
-  SECRET,
+  context: ({req}) => {
+    // GET USER TOKEN
+    const token = req.headers.authorization || '';
+
+    // Try to retrieve user with the token
+    const user = getUser(token)
+
+    // OPTIONALLY BLOCK USER
+    if(!user) throw new AuthenticationError('You must be logged in!')
+
+    // add user to context
+    return {user}
+  },
+  plugins: [
+    ApolloServerPluginLandingPageLocalDefault({embed: true})
+  ],
   // HANDLE ERRORS
   debug: false,
   formatError: (error) => {
@@ -32,6 +51,7 @@ const server = new ApolloServer({
     }
   }
 });
+
 
 // LISTEN ON TO SERVER
 server
