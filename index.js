@@ -15,11 +15,15 @@ const dataSources = () => ({
 // RESOLVER FUNCTION
 const resolvers = require('./resolvers')
 
+// JSON WEB TOKEN
+const SECRET = '4pcPyMD09o1PSyXnrXCjTwr4BsezdI1AVTmud2fU4'
+
 // CREATE APOLLO SERVER
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources,
+  SECRET,
   // HANDLE ERRORS
   debug: false,
   formatError: (error) => {

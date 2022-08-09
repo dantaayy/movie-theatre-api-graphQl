@@ -49,8 +49,8 @@ type User {
 
 input UserInput {
     id: ID!,
-    username: String,
-    password: String
+    username: String!,
+    password: String!
 }
 
 input DeleteUserInput {
@@ -64,7 +64,9 @@ type Mutation {
     deleteUser(user: DeleteUserInput): User,
     findShow(show: WatchedShowInput): Show,
     updateShow(id: ID!, title: String, genre: String, status: String): Show,
-    updateUser(id:ID!, username: String, password: String): User
+    updateUser(id:ID!, username: String, password: String): User,
+    signUp(user: UserInput): User!,
+    login(username: String!, password: String!): String!,
 }
 
 `

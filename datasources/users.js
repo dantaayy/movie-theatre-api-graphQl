@@ -4,6 +4,7 @@ const shows = require('../data/shows.json')
 const {DataSource} = require('apollo-datasource');
 const _ = require('lodash')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 // HASH PASSWORD BEFORE QUERING THEM
 users.forEach(async (user) => {
@@ -27,7 +28,7 @@ class UserAPI extends DataSource {
         return _.filter(users, args)
     }
 
-    async addUser(user) {
+    async signUp(user) {
         const hashPassword = await bcrypt.hash(user.password, 10)
         user.password = hashPassword
         users.push(user)
@@ -59,6 +60,36 @@ class UserAPI extends DataSource {
         user.password = hashPassword
         console.log(user)
         return user
+    }
+
+    async login({username, password}) {
+        const user = await users.find(item => item.username === username)
+        console.log(user)
+        if(!user) {
+            throw new Error('No user with that username!')
+        }
+
+        // COMPARE PLAINTXT PW W/ HASH PW
+        const valid = await bcrypt.compare(password, user.password)
+        // console.log(valid)
+        if(!valid) {
+            throw new Error('Incorrect password')
+        }
+
+        // .SIGN() WILL RETURN 1ST OBJ THAT IS KNOWN AS DATA
+        // SIGNED WITH THE SECRET FOR AUTHENTICATION
+        // NO SECRET === USE ON CLIENT SIDE
+        const token = jwt.sign(
+            {
+                user: _.pick(user, ['id', 'username'])
+            },
+            SECRET,
+            {
+                expiresIn: "100d"
+            }
+        );
+
+        return token;
     }
 
 }
