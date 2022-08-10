@@ -8,7 +8,6 @@ type Query {
         rating: Int,
         status: String,
     ): [Show],
-    showsByRating(rating:Int): [Show],
     users(
         username: String,
         password: String

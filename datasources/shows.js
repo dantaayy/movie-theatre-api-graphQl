@@ -18,11 +18,6 @@ class ShowAPI extends DataSource {
         return _.filter(shows, args);
     }
 
-    getShowsByRating(rating) {
-        const matchedShows = _.filter(shows, ['rating', rating])
-        return matchedShows
-    }
-
     addShow(show) {
         shows.push(show)
         return show;
