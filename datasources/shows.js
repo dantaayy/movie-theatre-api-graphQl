@@ -18,17 +18,6 @@ class ShowAPI extends DataSource {
         return _.filter(shows, args);
     }
 
-    getShowsByRating(rating) {
-        const matchedShows = _.filter(shows, ['rating', rating])
-        return matchedShows
-    }
-
-    toggleWatchedShow(title) {
-        const watchedShows = _.filter(shows, ['title', title])
-        watchedShows[0].watched = !watchedShows[0].watched
-        return watchedShows[0]
-    }
-
     addShow(show) {
         shows.push(show)
         return show;
@@ -41,6 +30,16 @@ class ShowAPI extends DataSource {
         const deletedItem = shows.splice(index, 1)
         // console.log(deletedItem)
         return deletedItem
+    }
+
+    updateShow({id, title, genre, status}) {
+        const foundShow = shows.find(item => item.id === id)
+        foundShow.title = title
+        foundShow.genre = genre
+        foundShow.status = status
+
+        console.log(foundShow)
+        return foundShow
     }
 }
 

@@ -8,7 +8,6 @@ type Query {
         rating: Int,
         status: String,
     ): [Show],
-    showsByRating(rating:Int): [Show],
     users(
         username: String,
         password: String
@@ -16,15 +15,24 @@ type Query {
 }
 
 type Show {
+    id: ID!,
     title: String,
     genre: String,
     rating: Int,
     status: String,
+    userId: [Int],
+    users: [User]
 }
 
 input ShowInput {
+    id: ID!,
     title: String,
     genre: String,
+    rating: Int
+}
+
+input WatchedShowInput {
+    id: ID!
 }
 
 input DeleteShowInput {
@@ -32,14 +40,16 @@ input DeleteShowInput {
 }
 
 type User {
+    id: ID!,
     username: String,
     password: String
-    watched: [Show!]
+    shows: [Show]
 }
 
 input UserInput {
-    username: String,
-    password: String
+    id: ID!,
+    username: String!,
+    password: String!
 }
 
 input DeleteUserInput {
@@ -47,11 +57,15 @@ input DeleteUserInput {
 }
 
 type Mutation {
-    toggleWatchedShow(title: String): Show
     addNewShow(show: ShowInput): Show,
     deleteShow(show: DeleteShowInput): Show,
-    addUser(user: UserInput): User,
+    addUser(user: UserInput): User!,
     deleteUser(user: DeleteUserInput): User,
+    findShow(show: WatchedShowInput): Show,
+    updateShow(id: ID!, title: String, genre: String, status: String): Show,
+    updateUser(id:ID!, username: String, password: String): User,
+    signUp(user: UserInput): User!,
+    login(username: String!, password: String!): String!,
 }
 
 `

@@ -13,7 +13,9 @@
   "dependencies": {
     "apollo-datasource": "^3.3.2",
     "apollo-server": "^3.10.0",
+    "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.19"
   }

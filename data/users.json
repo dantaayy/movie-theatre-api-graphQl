@@ -1,11 +1,15 @@
 [
     {
+      "id": "1",
       "username": "testUser@gmail.com",
-      "password": "ThisIsATest"
+      "password": "ThisIsATest",
+      "shows": []
     },
     {
+      "id": "2",
       "username": "someone@gmail.com",
-      "password": "asdfsAS2@1"
+      "password": "asdfsAS2@1",
+      "shows": []
     }
 ]
 
